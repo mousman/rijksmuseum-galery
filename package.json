@@ -1,5 +1,5 @@
 {
-  "name": "rijksmuseum-galery",
+  "name": "rijksmuseum-gallery",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -32,6 +32,7 @@
     "eslint": "^9.21.0",
     "eslint-plugin-oxlint": "^0.15.13",
     "eslint-plugin-vue": "~10.0.0",
+    "fast-glob": "^3.3.3",
     "husky": "^9.1.7",
     "jiti": "^2.4.2",
     "jsdom": "^26.0.0",

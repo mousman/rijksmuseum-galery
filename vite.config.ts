@@ -6,17 +6,27 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
+import fg from 'fast-glob'
 
+const componentDirs = fg.globSync(`src/**/components/`, { onlyFiles: false })
+const pageDirs = fg.globSync(`src/**/pages/`, { onlyFiles: false })
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    VueRouter(),
+    VueRouter({
+      routesFolder: pageDirs,
+    }),
     vue(),
     vueDevTools(),
     AutoImport({
       imports: ['vue', VueRouterAutoImports],
+      dts: true,
     }),
-    Components(),
+    Components({
+      dirs: componentDirs,
+      directoryAsNamespace: true,
+      dts: true,
+    }),
   ],
   resolve: {
     alias: {
