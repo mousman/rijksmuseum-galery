@@ -2,4 +2,4 @@
 
 <template>Main page</template>
 
-<style scoped></style>
+<style></style>
