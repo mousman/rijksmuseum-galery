@@ -19,7 +19,19 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     AutoImport({
-      imports: ['vue', VueRouterAutoImports],
+      imports: [
+        'vue',
+        VueRouterAutoImports,
+        {
+          '@tanstack/vue-query': [
+            `useQuery`,
+            `useQueries`,
+            `useMutation`,
+            `useQueryClient`,
+            `useIsFetching`,
+          ],
+        },
+      ],
       dts: true,
     }),
     Components({
@@ -33,4 +45,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  envDir: `./environments`,
 })

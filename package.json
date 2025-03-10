@@ -17,6 +17,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@tanstack/vue-query": "^5.67.2",
+    "ky": "^1.7.5",
     "sass-embedded": "^1.85.1",
     "vue": "^3.5.13"
   },
