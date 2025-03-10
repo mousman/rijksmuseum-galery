@@ -1,10 +1,5 @@
-<script setup lang="ts">
-import MainWrapper from '@/components/main-wrapper.vue'
-</script>
+<script setup lang="ts"></script>
 
-<template>
-  <header>header</header>
-  <MainWrapper>main</MainWrapper>
-</template>
+<template>Main page</template>
 
 <style scoped></style>
