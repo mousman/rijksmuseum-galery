@@ -1,0 +1,9 @@
+.theme-retro {
+  .gallery-tile {
+    --background-color: black;
+
+    &__title {
+      --background-color: yellow;
+    }
+  }
+}
