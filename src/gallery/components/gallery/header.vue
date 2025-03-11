@@ -4,5 +4,6 @@
 <style lang="scss">
 .rm-header {
   background-color: aliceblue;
+  height: var(--header-height);
 }
 </style>

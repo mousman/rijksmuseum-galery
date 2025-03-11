@@ -1,23 +1,15 @@
-<script setup lang="ts">
-import { useFetchGallery } from '@/gallery/composables/gallery'
-
-const { isError, isLoading, data } = useFetchGallery()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <GalleryHeader />
-  <main>gallery</main>
-
-  <pre>
-    {{ isError }}
-  </pre>
-
-  <pre>
-    {{ isLoading }}
-  </pre>
-  <pre v-if="data">
-    {{ data }}
-  </pre>
+  <main>
+    <GalleryTilesBox />
+  </main>
+  <GalleryFooter />
 </template>
 
-<style></style>
+<style lang="scss">
+.gallery-footer {
+  height: var(--gallery-footer-height);
+}
+</style>

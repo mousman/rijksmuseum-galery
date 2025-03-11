@@ -29,6 +29,7 @@ export default defineConfig({
             `useMutation`,
             `useQueryClient`,
             `useIsFetching`,
+            `useInfiniteQuery`,
           ],
         },
       ],
