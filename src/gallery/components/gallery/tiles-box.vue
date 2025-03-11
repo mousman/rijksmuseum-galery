@@ -5,29 +5,36 @@ const { isError, error, isPending, data: gallery } = useFetchGallery()
 </script>
 
 <template>
-  gallery
-  <span v-if="isPending">Loading...</span>
-  <span v-else-if="isError">Error : {{ error?.message }}</span>
-  <ul v-else-if="gallery" class="gallery-container" role="list">
-    <template v-for="(galleryPage, index) in gallery.pages" :key="index">
-      <li
-        v-for="artObject in galleryPage.artObjects"
-        :key="artObject.id"
-        class="gallery-container__art-object"
-      >
-        <GalleryTile :art-object="artObject" />
+  <div class="gallery">
+    <span v-if="isPending">Loading...</span>
+    <span v-else-if="isError">Error : {{ error?.message }}</span>
+    <ul v-else-if="gallery" class="gallery-container" role="list">
+      <template v-for="(galleryPage, index) in gallery.pages" :key="index">
+        <li
+          v-for="artObject in galleryPage.artObjects"
+          :key="artObject.id"
+          class="gallery-container__art-object"
+        >
+          <GalleryTile :art-object="artObject" />
+        </li>
+      </template>
+      <li>
+        <GalleryLoadMoreTile />
       </li>
-    </template>
-  </ul>
+    </ul>
+  </div>
 </template>
 
 <style lang="scss">
+.gallery {
+  margin-top: calc(var(--header-height) + 1rem);
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 2rem);
+}
 .gallery-container {
-  list-style: none;
+  --min-tile-width: 200px;
+
   margin-bottom: 2rem;
   margin: 0 10rem;
-  padding: 0;
-  --min-tile-width: 200px;
 
   display: grid;
   gap: 1rem;

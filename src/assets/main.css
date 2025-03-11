@@ -1,9 +1,8 @@
+@import './reset.css';
 @import './theme-retro.scss';
+@import './theme-default.scss';
 
 :root {
-  --header-height: 80px;
-}
-
-body {
-  margin: 0;
+  --header-height: 50px;
+  --footer-height: 50px;
 }

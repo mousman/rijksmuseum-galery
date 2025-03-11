@@ -7,3 +7,5 @@ export function getNearestZ(levels: GalleryImageLevel[], height: number) {
 
   return sortedLevelArray[0]
 }
+
+export const TILE_HEIGHT = 180

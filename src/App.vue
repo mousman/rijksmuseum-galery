@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { applyDefaultTheme } from '@/appp/composables/theme'
 onMounted(() => {
-  document.body.classList.add('theme-retro')
+  applyDefaultTheme()
 })
 </script>
 <template>
