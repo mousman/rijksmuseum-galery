@@ -1,0 +1,48 @@
+.theme-default {
+  background-color: black;
+
+  .gallery-tile-loading {
+    --color: white;
+  }
+
+  .gallery-tile-error {
+    --color: white;
+  }
+
+  // .gallery-tile:hover .gallery-tile__title {
+  //   visibility: visible;
+  // }
+
+  .gallery-tile {
+    --background-color: black;
+
+    &__title {
+      visibility: hidden;
+      --background-color: black;
+      --color: white;
+    }
+
+    &:hover {
+      .gallery-tile__title {
+        visibility: visible;
+      }
+    }
+  }
+
+  .gallery-load-more {
+    --background-color: black;
+  }
+
+  .rm-header {
+    --background-color: white;
+    --color: black;
+  }
+
+  .gallery-footer {
+    --background-color: white;
+
+    a {
+      color: black;
+    }
+  }
+}

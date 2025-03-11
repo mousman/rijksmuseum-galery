@@ -1,17 +1,19 @@
-<script setup lang="ts">
-import { useFetchGallery } from '@/gallery/composables/gallery'
-
-const { fetchNextPage, hasNextPage, isFetchingNextPage } = useFetchGallery()
-</script>
 <template>
   <div class="gallery-footer">
-    <button @click="() => fetchNextPage()" :disabled="!hasNextPage || isFetchingNextPage">
-      load more
-    </button>
+    <a href="https://www.rijksmuseum.nl/nl">Rijksmuseum website</a>
   </div>
 </template>
 <style lang="scss">
 .gallery-footer {
   height: var(--gallery-footer-height);
+  background-color: var(--background-color);
+  display: flex;
+  color: black;
+  margin-top: 1rem;
+  padding: 1rem;
+
+  &:active {
+    color: black;
+  }
 }
 </style>

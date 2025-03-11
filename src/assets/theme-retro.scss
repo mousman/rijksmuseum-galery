@@ -1,9 +1,36 @@
 .theme-retro {
+  background-color: white;
+
+  .gallery-tile-loading {
+    --color: black;
+  }
+
+  .gallery-tile-error {
+    --color: black;
+  }
+
   .gallery-tile {
     --background-color: black;
 
     &__title {
       --background-color: yellow;
+      --color: black;
+    }
+  }
+  .gallery-load-more {
+    --background-color: black;
+  }
+
+  .rm-header {
+    --background-color: #f31b95;
+    --color: white;
+  }
+
+  .gallery-footer {
+    --background-color: #f31b95;
+
+    a {
+      color: black;
     }
   }
 }
