@@ -1,17 +1,22 @@
 <script setup lang="ts">
 import type { ArtObject } from '@/gallery/types/gallery'
 import { useFetchArtObject } from '@/gallery/composables/gallery'
+import { getNearestZ } from '@/gallery/composables/art-object'
 
 const { artObject } = defineProps<{
   artObject: ArtObject
 }>()
 
+const TILE_HEIGHT = 180
+const cssTileHeight = computed(() => `${TILE_HEIGHT}px`)
+
 const artOjbectId = toRef(artObject.objectNumber)
 
 const { isLoading, data, isError } = useFetchArtObject(artOjbectId)
 const imgSrc = computed(() => {
-  const level4 = data.value?.levels.find((level) => level.name === 'z4')
-  return level4?.tiles?.[0].url ?? ''
+  if (!data.value) return ''
+  const level = getNearestZ(data.value.levels, TILE_HEIGHT)
+  return level.tiles[0].url ?? ''
 })
 </script>
 <template>
@@ -25,7 +30,7 @@ const imgSrc = computed(() => {
 <style lang="scss">
 .gallery-tile {
   position: relative;
-  height: 180px;
+  height: v-bind(cssTileHeight);
   background-color: var(--background-color);
 
   &__title {

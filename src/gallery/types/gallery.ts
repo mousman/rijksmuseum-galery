@@ -46,7 +46,7 @@ interface GalleryTile {
   url: string
 }
 
-interface GalleryImageLevel {
+export interface GalleryImageLevel {
   name: string
   width: number
   height: number
