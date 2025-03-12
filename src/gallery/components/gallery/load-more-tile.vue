@@ -17,6 +17,7 @@ console.log(cssTileHeight.value)
       @click="() => fetchNextPage()"
       :disabled="!hasNextPage || isFetchingNextPage"
     >
+      <div v-if="isFetchingNextPage"><MdiLoading class="g-loading__icon" /></div>
       load more
     </button>
   </div>

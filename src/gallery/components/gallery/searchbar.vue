@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
 const router = useRouter()
 const search = ref<string>('')
 
@@ -20,7 +19,9 @@ const handleSubmit = () => {
       class="gallery-searchbar__input"
     />
 
-    <button type="submit" class="gallery-searchbar__submit">SUBMIT</button>
+    <button type="submit" class="gallery-searchbar__submit">
+      <mdi-search />
+    </button>
   </form>
 </template>
 <style lang="scss">
@@ -36,7 +37,9 @@ const handleSubmit = () => {
   }
 
   &__submit {
-    padding: 0.5rem 2rem;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
     color: var(--primary-color);
     background-color: var(--background-color);
     cursor: pointer;
