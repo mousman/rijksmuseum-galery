@@ -27,8 +27,10 @@ const imgSrc = computed(() => {
   </div>
   <Transition name="fade">
     <div v-if="data && imgSrc" class="gallery-tile">
-      <img :src="imgSrc" class="gallery-tile__image" />
-      <figcaption class="gallery-tile__title">{{ artObject.title }}</figcaption>
+      <figure>
+        <img :src="imgSrc" class="gallery-tile__image" />
+        <figcaption class="gallery-tile__title">{{ artObject.title }}</figcaption>
+      </figure>
     </div>
   </Transition>
 </template>
