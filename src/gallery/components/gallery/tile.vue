@@ -21,10 +21,12 @@ const imgSrc = computed(() => {
 <template>
   <div v-if="isLoading" class="gallery-tile-loading">loading</div>
   <div v-else-if="isError || !data?.levels.length" class="gallery-tile-error">error</div>
-  <div v-else-if="data" class="gallery-tile">
-    <img v-if="imgSrc" :src="imgSrc" class="gallery-tile__image" />
-    <div class="gallery-tile__title">{{ artObject.title }}</div>
-  </div>
+  <Transition name="fade">
+    <div v-if="data && imgSrc" class="gallery-tile">
+      <img :src="imgSrc" class="gallery-tile__image" />
+      <div class="gallery-tile__title">{{ artObject.title }}</div>
+    </div>
+  </Transition>
 </template>
 <style lang="scss">
 .gallery-tile-error {
@@ -53,6 +55,7 @@ const imgSrc = computed(() => {
   &__title {
     position: absolute;
     color: var(--color);
+    font-size: 0.75rem;
     left: 0;
     right: 0;
     bottom: 0;
@@ -62,7 +65,8 @@ const imgSrc = computed(() => {
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
-    padding: 0.5rem 0.5rem 0 0.5rem;
+    padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+    text-align: center;
   }
 
   &__image {
@@ -71,5 +75,15 @@ const imgSrc = computed(() => {
     object-fit: contain;
     object-position: center;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

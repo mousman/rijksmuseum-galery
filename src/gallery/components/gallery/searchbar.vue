@@ -11,10 +11,14 @@ const handleSubmit = () => {
 
 <template>
   <form @submit.prevent="handleSubmit" class="gallery-searchbar">
-    <div class="gallery-searchbar__content">
-      <label for="search" class="gallery-searchbar__label">Search :</label>
-      <input id="search" v-model="search" type="text" required class="gallery-searchbar__input" />
-    </div>
+    <input
+      aria-label="Search"
+      id="search"
+      v-model="search"
+      type="text"
+      required
+      class="gallery-searchbar__input"
+    />
 
     <button type="submit" class="gallery-searchbar__submit">SUBMIT</button>
   </form>
@@ -27,16 +31,6 @@ const handleSubmit = () => {
   gap: 0.5rem;
   justify-content: center;
 
-  &__content {
-    display: flex;
-    align-items: stretch;
-  }
-
-  &__label {
-    color: var(--color);
-    line-height: 2;
-  }
-
   &__input {
     padding: 0.25rem 1rem;
   }
@@ -46,6 +40,12 @@ const handleSubmit = () => {
     color: var(--primary-color);
     background-color: var(--background-color);
     cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 </style>

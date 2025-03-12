@@ -3,13 +3,13 @@ import { useFetchGallery } from '@/gallery/composables/gallery'
 const route = useRoute()
 const searchRef = toRef(() => route.query.q?.toString() ?? '')
 
-const { isError, error, isLoading, data: gallery } = useFetchGallery(searchRef)
+const { isError, isLoading, data: gallery } = useFetchGallery(searchRef)
 </script>
 
 <template>
   <div class="gallery">
-    <span v-if="isLoading">Loading...</span>
-    <span v-else-if="isError">Error : {{ error?.message }}</span>
+    <div v-if="isLoading" class="gallery__loading">Loading...</div>
+    <div v-else-if="isError" class="gallery__error">It looks like something went wrong !</div>
     <GalleryPlaceholder v-else-if="!gallery?.pages" />
     <ul v-else-if="gallery" class="gallery-container" role="list">
       <template v-for="(galleryPage, index) in gallery.pages" :key="index">
@@ -31,15 +31,26 @@ const { isError, error, isLoading, data: gallery } = useFetchGallery(searchRef)
 <style lang="scss">
 .gallery {
   margin-top: 1rem;
+
+  &__loading {
+    margin-top: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  &__error {
+    margin-top: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
 }
 
 .gallery-container {
   --min-tile-width: 200px;
-  margin-bottom: 2rem;
-  margin: 0 10rem;
+  margin: 6rem 10rem 0;
 
   display: grid;
-  gap: 1rem;
+  column-gap: 1rem;
+  row-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(var(--min-tile-width), 1fr));
 }
 </style>
