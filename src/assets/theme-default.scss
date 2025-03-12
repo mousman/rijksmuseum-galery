@@ -7,6 +7,14 @@
 
   background-color: var(--secondary-color);
 
+  .gallery-main__link {
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   .gallery-searchbar {
     &__submit {
       --background-color: var(--tertiary-color);
