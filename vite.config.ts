@@ -7,6 +7,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
 import fg from 'fast-glob'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 const componentDirs = fg.globSync(`src/**/components/`, { onlyFiles: false })
 const pageDirs = fg.globSync(`src/**/pages/`, { onlyFiles: false })
@@ -39,7 +41,14 @@ export default defineConfig({
       dirs: componentDirs,
       directoryAsNamespace: true,
       dts: true,
+      resolvers: [
+        IconsResolver({
+          prefix: false,
+          enabledCollections: ['mdi'],
+        }),
+      ],
     }),
+    Icons({ compiler: 'vue3' }),
   ],
   resolve: {
     alias: {

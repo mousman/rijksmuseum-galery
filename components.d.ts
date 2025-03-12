@@ -15,6 +15,7 @@ declare module 'vue' {
     GallerySearchbar: typeof import('./src/gallery/components/gallery/searchbar.vue')['default']
     GalleryTile: typeof import('./src/gallery/components/gallery/tile.vue')['default']
     GalleryTilesBox: typeof import('./src/gallery/components/gallery/tiles-box.vue')['default']
+    MdiSearch: typeof import('~icons/mdi/search')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
