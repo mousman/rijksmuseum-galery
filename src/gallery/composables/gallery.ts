@@ -1,25 +1,28 @@
 import { RIJKS_CollectionAPI } from '@/gallery/services/gallery'
 import type { GalleryResponse, GalleryImagesResponse } from '@/gallery/types/gallery'
+import { useURLSearchParams } from '@/appp/services/utils'
 
 const USE_FETCH_GALLERY = 'USE_FETCH_GALLERY'
 const USE_FETCH_ARTOBJECT = 'USE_FETCH_ARTOBJECT'
 
 export function useFetchGallery(search: Ref<string | undefined>) {
-  const searchParams = new URLSearchParams()
-  searchParams.append('key', import.meta.env.VITE_API_KEY)
-  searchParams.append('imgonly', 'true')
-  searchParams.append('s', 'relevance')
-  searchParams.append('ps', '20')
+  const defaultSearchParams = {
+    key: import.meta.env.VITE_API_KEY,
+    imgonly: true,
+    s: 'relevance',
+    ps: 20,
+  }
 
   const enabled = computed(() => search.value !== ``)
 
   return useInfiniteQuery({
     queryKey: [USE_FETCH_GALLERY, search],
     queryFn: async ({ pageParam }) => {
-      searchParams.delete('q')
-      searchParams.append('q', search?.value ?? '')
-      searchParams.delete('p')
-      searchParams.append('p', pageParam.toString())
+      const searchParams = useURLSearchParams({
+        ...defaultSearchParams,
+        q: search?.value ?? '',
+        p: pageParam,
+      })
       const req = await RIJKS_CollectionAPI(`en/collection/`, {
         searchParams,
       }).json<GalleryResponse>()
