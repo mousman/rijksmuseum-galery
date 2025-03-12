@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { useFetchGallery } from '@/gallery/composables/gallery'
+const route = useRoute()
+const searchRef = toRef(() => route.query.q?.toString() ?? '')
 
-const { isError, error, isPending, data: gallery } = useFetchGallery()
+const { isError, error, isLoading, data: gallery } = useFetchGallery(searchRef)
 </script>
 
 <template>
   <div class="gallery">
-    <span v-if="isPending">Loading...</span>
+    <span v-if="isLoading">Loading...</span>
     <span v-else-if="isError">Error : {{ error?.message }}</span>
+    <GalleryPlaceholder v-else-if="!gallery?.pages" />
     <ul v-else-if="gallery" class="gallery-container" role="list">
       <template v-for="(galleryPage, index) in gallery.pages" :key="index">
         <li
@@ -27,12 +30,11 @@ const { isError, error, isPending, data: gallery } = useFetchGallery()
 
 <style lang="scss">
 .gallery {
-  margin-top: calc(var(--header-height) + 1rem);
-  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 2rem);
+  margin-top: 1rem;
 }
+
 .gallery-container {
   --min-tile-width: 200px;
-
   margin-bottom: 2rem;
   margin: 0 10rem;
 

@@ -2,14 +2,16 @@
 
 <template>
   <GalleryHeader />
-  <main>
+  <main class="gallery-main">
+    <GallerySearchbar />
     <GalleryTilesBox />
   </main>
   <GalleryFooter />
 </template>
 
 <style lang="scss">
-.gallery-footer {
-  height: var(--gallery-footer-height);
+.gallery-main {
+  margin-top: calc(var(--header-height) + 2rem);
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 </style>
