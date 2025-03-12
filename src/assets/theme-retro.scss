@@ -1,36 +1,54 @@
 .theme-retro {
+  --primary-color: black;
+  --secondary-color: white;
+  --tertiary-color: #f31b95;
+
   background-color: white;
 
+  .gallery-searchbar {
+    &__label {
+      --color: var(--primary-color);
+    }
+
+    &__submit {
+      opacity: 1;
+    }
+  }
+
+  .gallery-description {
+    --color: var(--primary-color);
+  }
+
   .gallery-tile-loading {
-    --color: black;
+    --color: var(--primary-color);
   }
 
   .gallery-tile-error {
-    --color: black;
+    --color: var(--primary-color);
   }
 
   .gallery-tile {
-    --background-color: black;
+    --background-color: var(--primary-color);
 
     &__title {
       --background-color: yellow;
-      --color: black;
+      --color: var(--primary-color);
     }
   }
   .gallery-load-more {
-    --background-color: black;
+    --background-color: var(--secondary-color);
   }
 
   .rm-header {
-    --background-color: #f31b95;
-    --color: white;
+    --background-color: var(--tertiary-color);
+    --color: var(--secondary-color);
   }
 
   .gallery-footer {
-    --background-color: #f31b95;
+    --background-color: var(--tertiary-color);
 
     a {
-      color: black;
+      color: var(--primary-color);
     }
   }
 }

@@ -6,3 +6,15 @@
   --header-height: 50px;
   --footer-height: 50px;
 }
+
+@font-face {
+  font-family: Inter-Regular;
+  src: url(./fonts/Inter-VariableFont_opsz,wght.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter-Italic;
+  src: url(./fonts/Inter-Italic-VariableFont_opsz,wght.ttf);
+  font-display: swap;
+}

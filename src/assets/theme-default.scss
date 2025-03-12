@@ -1,48 +1,70 @@
 .theme-default {
-  background-color: black;
+  font-family: 'Inter-Regular', sans-serif;
+
+  --primary-color: white;
+  --secondary-color: black;
+  --tertiary-color: #521986;
+
+  background-color: var(--secondary-color);
+
+  .gallery-searchbar {
+    &__submit {
+      --background-color: var(--tertiary-color);
+      border: none;
+    }
+  }
+
+  .gallery-description {
+    --color: var(--primary-color);
+  }
 
   .gallery-tile-loading {
-    --color: white;
+    --color: var(--primary-color);
   }
 
   .gallery-tile-error {
-    --color: white;
+    --color: var(--primary-color);
   }
 
-  // .gallery-tile:hover .gallery-tile__title {
-  //   visibility: visible;
-  // }
-
   .gallery-tile {
-    --background-color: black;
+    --background-color: var(--secondary-color);
+    overflow: hidden;
 
     &__title {
-      visibility: hidden;
-      --background-color: black;
-      --color: white;
+      bottom: -5rem;
+      --background-color: var(--tertiary-color);
+      --color: var(--primary-color);
+      transition: 0.4s;
     }
 
     &:hover {
       .gallery-tile__title {
-        visibility: visible;
+        bottom: 0;
       }
     }
   }
 
   .gallery-load-more {
-    --background-color: black;
+    --background-color: var(--secondary-color);
+    opacity: 1;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   .rm-header {
-    --background-color: white;
-    --color: black;
+    --background-color: var(--primary-color);
+    --color: var(--secondary-color);
+    box-shadow: 0px 3px 7px 3px black;
   }
 
   .gallery-footer {
-    --background-color: white;
+    --background-color: var(--primary-color);
 
     a {
-      color: black;
+      color: var(--secondary-color);
     }
   }
 }

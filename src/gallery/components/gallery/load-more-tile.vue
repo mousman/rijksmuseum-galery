@@ -31,9 +31,14 @@ console.log(cssTileHeight.value)
   padding: 0 2rem;
 
   &__button {
+    height: 75%;
     padding: 1rem 0;
     font-weight: bold;
+    font-size: 1.5rem;
     cursor: pointer;
+    border: none;
+    color: var(--primary-color);
+    background-color: var(--tertiary-color);
   }
 }
 </style>
