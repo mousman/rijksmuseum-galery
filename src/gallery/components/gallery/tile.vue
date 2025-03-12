@@ -19,17 +19,22 @@ const imgSrc = computed(() => {
 })
 </script>
 <template>
-  <div v-if="isLoading" class="gallery-tile-loading">loading</div>
-  <div v-else-if="isError || !data?.levels.length" class="gallery-tile-error">error</div>
+  <div v-if="isLoading" class="gallery-tile-loading">
+    <MdiLoading class="g-loading__icon" />
+  </div>
+  <div v-else-if="isError || !data?.levels.length" class="gallery-tile-error">
+    <MdiNoteOffOutline />
+  </div>
   <Transition name="fade">
     <div v-if="data && imgSrc" class="gallery-tile">
       <img :src="imgSrc" class="gallery-tile__image" />
-      <div class="gallery-tile__title">{{ artObject.title }}</div>
+      <figcaption class="gallery-tile__title">{{ artObject.title }}</figcaption>
     </div>
   </Transition>
 </template>
 <style lang="scss">
 .gallery-tile-error {
+  font-size: 2rem;
   color: var(--color);
   display: flex;
   flex-direction: column;

@@ -1,6 +1,7 @@
 @import './reset.css';
 @import './theme-retro.scss';
 @import './theme-default.scss';
+@import './animations.scss';
 
 :root {
   --header-height: 50px;

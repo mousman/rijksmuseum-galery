@@ -8,7 +8,10 @@ const { isError, isLoading, data: gallery } = useFetchGallery(searchRef)
 
 <template>
   <div class="gallery">
-    <div v-if="isLoading" class="gallery__loading">Loading...</div>
+    <div v-if="isLoading" class="gallery__loading g-loading">
+      <div>Loading...</div>
+      <MdiLoading class="g-loading__icon" />
+    </div>
     <div v-else-if="isError" class="gallery__error">It looks like something went wrong !</div>
     <GalleryPlaceholder v-else-if="!gallery?.pages" />
     <ul v-else-if="gallery" class="gallery-container" role="list">
@@ -52,5 +55,14 @@ const { isError, isLoading, data: gallery } = useFetchGallery(searchRef)
   column-gap: 1rem;
   row-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(var(--min-tile-width), 1fr));
+
+  &__art-object {
+    position: relative;
+  }
+}
+
+.g-loading__icon {
+  margin-top: 1rem;
+  font-size: 2rem;
 }
 </style>
