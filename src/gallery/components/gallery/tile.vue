@@ -20,7 +20,7 @@ const imgSrc = computed(() => {
 </script>
 <template>
   <div v-if="isLoading" class="gallery-tile-loading">loading</div>
-  <div v-else-if="isError" class="gallery-tile-error">error</div>
+  <div v-else-if="isError || !data?.levels.length" class="gallery-tile-error">error</div>
   <div v-else-if="data" class="gallery-tile">
     <img v-if="imgSrc" :src="imgSrc" class="gallery-tile__image" />
     <div class="gallery-tile__title">{{ artObject.title }}</div>

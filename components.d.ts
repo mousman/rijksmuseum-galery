@@ -11,6 +11,8 @@ declare module 'vue' {
     GalleryFooter: typeof import('./src/gallery/components/gallery/footer.vue')['default']
     GalleryHeader: typeof import('./src/gallery/components/gallery/header.vue')['default']
     GalleryLoadMoreTile: typeof import('./src/gallery/components/gallery/load-more-tile.vue')['default']
+    GalleryPlaceholder: typeof import('./src/gallery/components/gallery/placeholder.vue')['default']
+    GallerySearchbar: typeof import('./src/gallery/components/gallery/searchbar.vue')['default']
     GalleryTile: typeof import('./src/gallery/components/gallery/tile.vue')['default']
     GalleryTilesBox: typeof import('./src/gallery/components/gallery/tiles-box.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
