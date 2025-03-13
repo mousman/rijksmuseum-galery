@@ -21,8 +21,8 @@ export interface ArtObject {
   }
   headerImage: {
     guid: string
-    offsetPercentageX: boolean
-    offsetPercentageY: boolean
+    offsetPercentageX: number
+    offsetPercentageY: number
     width: number
     height: number
     url: string

@@ -3,6 +3,10 @@ import type { ArtObject } from '@/gallery/types/gallery'
 import { useFetchArtObject } from '@/gallery/composables/gallery'
 import { getNearestZ, TILE_HEIGHT } from '@/gallery/composables/art-object'
 
+defineOptions({
+  name: `GalleryTile`,
+})
+
 const { artObject } = defineProps<{
   artObject: ArtObject
 }>()
@@ -22,7 +26,7 @@ const imgSrc = computed(() => {
   <div v-if="isLoading" class="gallery-tile-loading">
     <MdiLoading class="g-loading__icon" />
   </div>
-  <div v-else-if="isError || !data?.levels.length" class="gallery-tile-error">
+  <div v-else-if="isError || !data?.levels?.length" class="gallery-tile-error">
     <MdiNoteOffOutline />
   </div>
   <Transition name="fade">

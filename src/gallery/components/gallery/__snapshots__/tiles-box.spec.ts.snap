@@ -1,0 +1,109 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TilesBox > renders 1`] = `
+{
+  "artObject": {
+    "hasImage": true,
+    "headerImage": {
+      "guid": "b06a3793-1e02-42b5-beea-a485a29e7834",
+      "height": 430,
+      "offsetPercentageX": 0,
+      "offsetPercentageY": 0,
+      "url": "https://lh3.ggpht.com/VhJW8lei0ed6V3alJxuZPx1eU6wqz6lJBs-4s-XBfuH98AyCsGRr9eQTyEoyRCwsFhAEOyOCmE-tBbIAO3tkXUL9iufm=s0",
+      "width": 1791,
+    },
+    "id": "en-SK-C-1672",
+    "links": {
+      "self": "http://www.rijksmuseum.nl/api/en/collection/SK-C-1672",
+      "web": "http://www.rijksmuseum.nl/en/collection/SK-C-1672",
+    },
+    "longTitle": "Portrait of Alida Christina Assink, Jan Adam Kruseman, 1833",
+    "objectNumber": "SK-C-1672",
+    "permitDownload": true,
+    "principalOrFirstMaker": "Jan Adam Kruseman",
+    "productionPlaces": [],
+    "showImage": true,
+    "title": "Portrait of Alida Christina Assink",
+    "webImage": {
+      "guid": "a754c3dd-1734-462d-ab2c-c80a32f1a983",
+      "height": 7347,
+      "offsetPercentageX": 0,
+      "offsetPercentageY": 0,
+      "url": "https://lh5.ggpht.com/P5o0tug6fqYu5WAV1L8wObu37HGOGrwgRuGLhkx9Ban89a6PwwUOA2uTSEllOUN_S33pBoJi7NoFcMsw89guz14O8TY=s0",
+      "width": 5278,
+    },
+  },
+}
+`;
+
+exports[`TilesBox > renders with items 1`] = `
+{
+  "artObject": {
+    "hasImage": true,
+    "headerImage": {
+      "guid": "b06a3793-1e02-42b5-beea-a485a29e7834",
+      "height": 430,
+      "offsetPercentageX": 0,
+      "offsetPercentageY": 0,
+      "url": "https://lh3.ggpht.com/VhJW8lei0ed6V3alJxuZPx1eU6wqz6lJBs-4s-XBfuH98AyCsGRr9eQTyEoyRCwsFhAEOyOCmE-tBbIAO3tkXUL9iufm=s0",
+      "width": 1791,
+    },
+    "id": "en-SK-C-1672",
+    "links": {
+      "self": "http://www.rijksmuseum.nl/api/en/collection/SK-C-1672",
+      "web": "http://www.rijksmuseum.nl/en/collection/SK-C-1672",
+    },
+    "longTitle": "Portrait of Alida Christina Assink, Jan Adam Kruseman, 1833",
+    "objectNumber": "SK-C-1672",
+    "permitDownload": true,
+    "principalOrFirstMaker": "Jan Adam Kruseman",
+    "productionPlaces": [],
+    "showImage": true,
+    "title": "Portrait of Alida Christina Assink",
+    "webImage": {
+      "guid": "a754c3dd-1734-462d-ab2c-c80a32f1a983",
+      "height": 7347,
+      "offsetPercentageX": 0,
+      "offsetPercentageY": 0,
+      "url": "https://lh5.ggpht.com/P5o0tug6fqYu5WAV1L8wObu37HGOGrwgRuGLhkx9Ban89a6PwwUOA2uTSEllOUN_S33pBoJi7NoFcMsw89guz14O8TY=s0",
+      "width": 5278,
+    },
+  },
+}
+`;
+
+exports[`TilesBox > renders with placeholder if no request made 1`] = `
+{
+  "artObject": {
+    "hasImage": true,
+    "headerImage": {
+      "guid": "b06a3793-1e02-42b5-beea-a485a29e7834",
+      "height": 430,
+      "offsetPercentageX": 0,
+      "offsetPercentageY": 0,
+      "url": "https://lh3.ggpht.com/VhJW8lei0ed6V3alJxuZPx1eU6wqz6lJBs-4s-XBfuH98AyCsGRr9eQTyEoyRCwsFhAEOyOCmE-tBbIAO3tkXUL9iufm=s0",
+      "width": 1791,
+    },
+    "id": "en-SK-C-1672",
+    "links": {
+      "self": "http://www.rijksmuseum.nl/api/en/collection/SK-C-1672",
+      "web": "http://www.rijksmuseum.nl/en/collection/SK-C-1672",
+    },
+    "longTitle": "Portrait of Alida Christina Assink, Jan Adam Kruseman, 1833",
+    "objectNumber": "SK-C-1672",
+    "permitDownload": true,
+    "principalOrFirstMaker": "Jan Adam Kruseman",
+    "productionPlaces": [],
+    "showImage": true,
+    "title": "Portrait of Alida Christina Assink",
+    "webImage": {
+      "guid": "a754c3dd-1734-462d-ab2c-c80a32f1a983",
+      "height": 7347,
+      "offsetPercentageX": 0,
+      "offsetPercentageY": 0,
+      "url": "https://lh5.ggpht.com/P5o0tug6fqYu5WAV1L8wObu37HGOGrwgRuGLhkx9Ban89a6PwwUOA2uTSEllOUN_S33pBoJi7NoFcMsw89guz14O8TY=s0",
+      "width": 5278,
+    },
+  },
+}
+`;

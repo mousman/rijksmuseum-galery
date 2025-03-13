@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+defineOptions({
+  name: `GallerySearchbar`,
+})
+
 const router = useRouter()
 const search = ref<string>('')
 
