@@ -1,3 +1,8 @@
+<script setup lang="ts">
+defineOptions({
+  name: `GalleryPlaceholder`,
+})
+</script>
 <template>
   <div class="gallery-description">
     <div class="gallery-description__title">Explore digitized masterpieces.</div>

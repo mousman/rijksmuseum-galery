@@ -1,3 +1,8 @@
+<script setup lang="ts">
+defineOptions({
+  name: `GalleryFooter`,
+})
+</script>
 <template>
   <div class="gallery-footer">
     <a href="https://www.rijksmuseum.nl/nl">Rijksmuseum website</a>

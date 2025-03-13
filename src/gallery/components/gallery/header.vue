@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { switchTheme } from '@/appp/composables/theme'
+defineOptions({
+  name: `GalleryHeader`,
+})
 </script>
 <template>
   <header class="rm-header">
