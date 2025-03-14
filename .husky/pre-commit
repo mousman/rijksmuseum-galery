@@ -1,3 +1,4 @@
 pnpm format
 pnpm type-check
 pnpm lint:oxlint
+pnpm lint:eslint

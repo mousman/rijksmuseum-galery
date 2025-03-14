@@ -5,12 +5,8 @@ import { setupServer } from 'msw/node'
 import { createMock } from './mock-requests'
 // import chalk from 'chalk'
 import type { VueQueryPluginOptions } from '@tanstack/vue-query'
-
-interface TestContext {
-  mockGet?: ReturnType<typeof createMock>
-}
-
 import { enableAutoUnmount } from '@vue/test-utils'
+
 enableAutoUnmount(afterEach)
 
 const vueQueryPluginOptions: VueQueryPluginOptions = {
@@ -35,7 +31,7 @@ const mockGet = createMock(server, `get`)
 //   console.info(`🔚 DONE `, chalk.blue(request.method), request.url)
 // })
 
-beforeEach<TestContext>((context) => {
+beforeEach((context) => {
   context.mockGet = mockGet
 })
 

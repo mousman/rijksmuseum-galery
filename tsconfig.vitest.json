@@ -1,15 +1,15 @@
 {
   "extends": "./tsconfig.app.json",
   "include": [
-    "src/**/__tests__/*",
     "env.d.ts",
-    "vitest.d.ts",
     "auto-imports.d.ts",
-    "components.d.ts"
+    "components.d.ts",
+    "vitest-setup/*.ts",
+    "src/**/*.spec.ts"
   ],
   "exclude": [],
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.vitest.tsbuildinfo",
-    "types": ["node", "jsdom", "vitest", "vitest/globals"]
+    "types": ["node", "jsdom", "vitest/globals"]
   }
 }

@@ -19,6 +19,12 @@ jobs:
           node-version: lts/*
       - name: Install dependencies
         run: npm install -g pnpm && pnpm install
+      - name: Run oxlint
+        run: pnpm run lint:oxlint
+      - name: Run eslint
+        run: pnpm run lint:eslint
+      - name: Run type check
+        run: pnpm run type-check
       - name: Run unit tests
         run: pnpm run test:unit
 

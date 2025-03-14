@@ -23,8 +23,7 @@ vi.mock(`vue-router`, () => ({
 }))
 
 describe('TilesBox', () => {
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any*/
-  it('renders with placeholder if no request made', async (context: any) => {
+  it('renders with placeholder if no request made', async (context) => {
     context.mockGet('https://www.rijksmuseum.nl/api/en/collection/', {
       data: collectionResponse,
       searchParams,
@@ -35,8 +34,7 @@ describe('TilesBox', () => {
     expect(wrapper.findComponent(Placeholder).exists()).toBe(true)
   })
 
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any*/
-  it('renders with items', async (context: any) => {
+  it('renders with items', async (context) => {
     context.mockGet('https://www.rijksmuseum.nl/api/en/collection/', {
       data: collectionResponse,
       searchParams: { ...searchParams, q: 'painting' },
