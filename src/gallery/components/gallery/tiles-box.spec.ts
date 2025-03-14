@@ -63,8 +63,7 @@ describe('TilesBox', () => {
     expect(wrapper.findComponent(LoadMoreTile)?.exists()).toBe(true)
   })
 
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any*/
-  it('renders an error info', async (context: any) => {
+  it('renders an error info', async (context) => {
     context.mockGet('https://www.rijksmuseum.nl/api/en/collection/', {
       data: collectionResponse,
       searchParams: { ...searchParams, q: 'painting' },

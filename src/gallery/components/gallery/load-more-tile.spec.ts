@@ -18,8 +18,7 @@ vi.mock(`vue-router`, () => ({
 }))
 
 describe('LoadMoreTile', () => {
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any*/
-  it('renders', async (context: any) => {
+  it('renders', async (context) => {
     context.mockGet('https://www.rijksmuseum.nl/api/en/collection/', {
       data: collectionResponse,
       searchParams,
@@ -32,8 +31,7 @@ describe('LoadMoreTile', () => {
     expect(wrapper.find('.g-loading__icon').exists()).toBe(false)
   })
 
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any*/
-  it('requests a new set of art objects', async (context: any) => {
+  it('requests a new set of art objects', async (context) => {
     context.mockGet('https://www.rijksmuseum.nl/api/en/collection/', {
       data: collectionResponse,
       searchParams,

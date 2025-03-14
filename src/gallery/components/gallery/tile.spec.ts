@@ -9,8 +9,7 @@ vi.stubEnv(`VITE_API_KEY`, `myKey`)
 const searchParams = { key: 'myKey' }
 
 describe('Tile', () => {
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any*/
-  it('renders', async (context: any) => {
+  it('renders', async (context) => {
     context.mockGet(
       `https://www.rijksmuseum.nl/api/en/collection/${artObject.objectNumber}/tiles`,
       { data: tiles, searchParams },

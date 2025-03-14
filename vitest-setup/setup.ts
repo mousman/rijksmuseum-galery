@@ -6,10 +6,8 @@ import { createMock } from './mock-requests'
 // import chalk from 'chalk'
 import type { VueQueryPluginOptions } from '@tanstack/vue-query'
 
-declare module 'vitest' {
-  export interface TestContext {
-    mockGet?: ReturnType<typeof createMock>
-  }
+interface TestContext {
+  mockGet?: ReturnType<typeof createMock>
 }
 
 import { enableAutoUnmount } from '@vue/test-utils'
@@ -37,7 +35,7 @@ const mockGet = createMock(server, `get`)
 //   console.info(`🔚 DONE `, chalk.blue(request.method), request.url)
 // })
 
-beforeEach((context) => {
+beforeEach<TestContext>((context) => {
   context.mockGet = mockGet
 })
 
